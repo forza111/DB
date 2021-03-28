@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from smart_selects.db_fields import ChainedForeignKey
 
 class TypeNumber(models.Model):
     type_number = models.CharField("Тип телефона",max_length=20)
@@ -15,4 +16,42 @@ class Telephone(models.Model):
                                          related_name="type_num")
 
     def get_type_number(self):
-        return ",".join([str(tn) for tn in self.type_number.all()])
+        return ",".join([str(i) for i in self.type_number.all()])
+
+
+class Country(models.Model):
+    name_country = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name_country
+
+
+class Area(models.Model):
+    name_area = models.CharField("Область",max_length=30)
+    country_id = models.ForeignKey(Country, on_delete=models.SET_NULL,null=True,verbose_name="Страна")
+
+    def __str__(self):
+        return self.name_area
+
+
+class City(models.Model):
+    name_city = models.CharField("Город",max_length=30)
+    area_id = models.ForeignKey(Area, on_delete=models.SET_NULL,null=True,verbose_name="Область")
+
+    def __str__(self):
+        return self.name_city
+
+
+class ResidenceAddres(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Пользователь")
+    country = models.ForeignKey(Country, on_delete=models.SET_NULL, verbose_name="Страна", null=True)
+
+
+class Location(models.Model):
+    country = models.ForeignKey(Country, on_delete=models.SET_NULL,null=True)
+    area = ChainedForeignKey(
+    Area,
+    chained_field="country",
+    chained_model_field="country_id",
+    show_all=False,
+    auto_choose=True)
