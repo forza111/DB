@@ -42,13 +42,9 @@ class City(models.Model):
         return self.name_city
 
 
-class ResidenceAddres(models.Model):
+class UserLocation(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Пользователь")
-    country = models.ForeignKey(Country, on_delete=models.SET_NULL, verbose_name="Страна", null=True)
-
-
-class Location(models.Model):
-    country = models.ForeignKey(Country, on_delete=models.SET_NULL,null=True)
+    country = models.OneToOneField(Country, on_delete=models.SET_NULL,null=True)
     area = ChainedForeignKey(
     Area,
     chained_field="country",
