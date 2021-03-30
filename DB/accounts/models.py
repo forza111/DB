@@ -51,3 +51,9 @@ class UserLocation(models.Model):
     chained_model_field="country_id",
     show_all=False,
     auto_choose=True)
+    city = ChainedForeignKey(
+        City,
+        chained_field="area",
+        chained_model_field="area_id",
+        show_all=False,
+        auto_choose=True)
