@@ -57,3 +57,8 @@ class UserLocation(models.Model):
         chained_model_field="area_id",
         show_all=False,
         auto_choose=True)
+    street = models.CharField("Улица", max_length=30)
+    house_number = models.CharField("Номер дома", max_length=10)
+    entrance = models.SmallIntegerField("Подъезд", max_length=50, null=True, blank=True)
+    floor = models.SmallIntegerField("Этаж", max_length=200, null=True, blank=True)
+    room = models.SmallIntegerField("Номер квартиры", max_length=500, null=True, blank=True)
