@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Telephone, TypeNumber, Country, Area, City, UserLocation
+from .models import Telephone, TypeNumber, Country, Area, City, UserLocation, Score
 
 
 @admin.register(TypeNumber)
@@ -20,6 +20,7 @@ class CityAdmin(admin.ModelAdmin):
 admin.site.register(Country)
 admin.site.register(Area)
 admin.site.register(UserLocation)
+admin.site.register(Score)
 
 
 

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from smart_selects.db_fields import ChainedForeignKey
+from django.core.validators import RegexValidator
 
 class TypeNumber(models.Model):
     type_number = models.CharField("Тип телефона",max_length=20)
@@ -58,7 +59,34 @@ class UserLocation(models.Model):
         show_all=False,
         auto_choose=True)
     street = models.CharField("Улица", max_length=30)
-    house_number = models.CharField("Номер дома", max_length=10)
-    entrance = models.SmallIntegerField("Подъезд", max_length=50, null=True, blank=True)
+    house_number = models.CharField("Номер дома", max_length=11, validators=[RegexValidator(r'^\d{1,5}(([/]\d{1,5})|[a-z,а-я])?$')])
+    building = models.SmallIntegerField("Корпус", max_length=5, null=True, blank=True)
+    edifice = models.SmallIntegerField("Строение", max_length=5, null=True, blank=True)
+    entrance = models.SmallIntegerField("Подъезд", max_length=5, null=True, blank=True)
     floor = models.SmallIntegerField("Этаж", max_length=200, null=True, blank=True)
-    room = models.SmallIntegerField("Номер квартиры", max_length=500, null=True, blank=True)
+    room = models.SmallIntegerField("Номер квартиры", max_length=5, null=True, blank=True)
+
+
+class Currency(models.Model):
+    name_currency = models.CharField("Валюта", max_length=20)
+
+    def __str__(self):
+        return "Валюта"
+
+class BankName(models.Model):
+    name = models.CharField("Название",max_length=30)
+
+class Swift(models.Model):
+    name = models.CharField("SWIFT-код",max_length=30)
+
+
+class Score(models.Model):
+    user_id =models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Пользователь")
+    currency = models.ManyToManyField(Currency, verbose_name="Валюта счета", related_name="currency_score")
+    score_number = models.CharField("Номер счета", unique=True, max_length=20,validators=[RegexValidator(r'^\d{20}$')])
+    bank_name = models.OneToOneField(BankName, verbose_name="Банк", on_delete=models.SET_NULL, null=True)
+    bik = models.CharField("БИК", unique=True, max_length=9,validators=[RegexValidator(r'^\d{9}$')])
+    correspondent_account = models.CharField("Корр.счет", max_length=20, validators=[RegexValidator(r'^\d{20}$')])
+    inn = models.CharField("ИНН", max_length=10, validators=[RegexValidator(r'^\d{10}$')])
+    kpp = models.CharField("КПП", max_length=9, validators=[RegexValidator(r'^\d{9}$')])
+    swift = models.ForeignKey(Swift, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="SWIFT-код")
