@@ -106,3 +106,8 @@ class Balance(models.Model):
 
     def __str__(self):
         return f"Баланс пользователя {self.score_id.user_id}"
+
+class Credit(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name="Кредит клиента")
+    name = models.CharField("Назначение кредита", max_length=100)
+    sum_credit = models.PositiveIntegerField("Сумма кредита")
