@@ -60,24 +60,30 @@ class UserLocation(models.Model):
         auto_choose=True)
     street = models.CharField("Улица", max_length=30)
     house_number = models.CharField("Номер дома", max_length=11, validators=[RegexValidator(r'^\d{1,5}(([/]\d{1,5})|[a-z,а-я])?$')])
-    building = models.SmallIntegerField("Корпус", max_length=5, null=True, blank=True)
-    edifice = models.SmallIntegerField("Строение", max_length=5, null=True, blank=True)
-    entrance = models.SmallIntegerField("Подъезд", max_length=5, null=True, blank=True)
-    floor = models.SmallIntegerField("Этаж", max_length=200, null=True, blank=True)
-    room = models.SmallIntegerField("Номер квартиры", max_length=5, null=True, blank=True)
+    building = models.PositiveSmallIntegerField("Корпус", max_length=5, null=True, blank=True)
+    edifice = models.PositiveSmallIntegerField("Строение", max_length=5, null=True, blank=True)
+    entrance = models.PositiveSmallIntegerField("Подъезд", max_length=5, null=True, blank=True)
+    floor = models.PositiveSmallIntegerField("Этаж", max_length=200, null=True, blank=True)
+    room = models.PositiveSmallIntegerField("Номер квартиры", max_length=5, null=True, blank=True)
 
 
 class Currency(models.Model):
     name_currency = models.CharField("Валюта", max_length=20)
 
     def __str__(self):
-        return "Валюта"
+        return self.name_currency
 
 class BankName(models.Model):
     name = models.CharField("Название",max_length=30)
 
+    def __str__(self):
+        return self.name
+
 class Swift(models.Model):
     name = models.CharField("SWIFT-код",max_length=30)
+
+    def __str__(self):
+        return self.name
 
 
 class Score(models.Model):
@@ -90,3 +96,13 @@ class Score(models.Model):
     inn = models.CharField("ИНН", max_length=10, validators=[RegexValidator(r'^\d{10}$')])
     kpp = models.CharField("КПП", max_length=9, validators=[RegexValidator(r'^\d{9}$')])
     swift = models.ForeignKey(Swift, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="SWIFT-код")
+
+    def __str__(self):
+        return "Счет " + str(self.user_id) + " валюта " + str(self.currency.get())
+
+class Balance(models.Model):
+    score_id = models.OneToOneField(Score, verbose_name="Счет", related_name="score", on_delete=models.CASCADE)
+    balance = models.PositiveIntegerField("Баланс", null=True, blank=True)
+
+    def __str__(self):
+        return "Баланс пользователя " + str(self.score_id.user_id)

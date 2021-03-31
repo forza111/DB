@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Telephone, TypeNumber, Country, Area, City, UserLocation, Score
+from .models import Telephone, TypeNumber, Country, Area, City, UserLocation, \
+    Score,Balance,Currency,BankName,Swift
 
 
 @admin.register(TypeNumber)
@@ -21,6 +22,10 @@ admin.site.register(Country)
 admin.site.register(Area)
 admin.site.register(UserLocation)
 admin.site.register(Score)
+admin.site.register(Balance)
+admin.site.register(Currency)
+admin.site.register(BankName)
+admin.site.register(Swift)
 
 
 
