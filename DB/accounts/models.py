@@ -98,11 +98,11 @@ class Score(models.Model):
     swift = models.ForeignKey(Swift, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="SWIFT-код")
 
     def __str__(self):
-        return "Счет " + str(self.user_id) + " валюта " + str(self.currency.get())
+        return f"Счет {self.user_id} Валюта: {self.currency.get()}"
 
 class Balance(models.Model):
     score_id = models.OneToOneField(Score, verbose_name="Счет", related_name="score", on_delete=models.CASCADE)
     balance = models.PositiveIntegerField("Баланс", null=True, blank=True)
 
     def __str__(self):
-        return "Баланс пользователя " + str(self.score_id.user_id)
+        return f"Баланс пользователя {self.score_id.user_id}"
