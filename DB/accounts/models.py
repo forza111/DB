@@ -107,7 +107,22 @@ class Balance(models.Model):
     def __str__(self):
         return f"Баланс пользователя {self.score_id.user_id}"
 
+
+class InterestRate(models.Model):
+    rate = models.CharField("Процентная ставка", max_length=2, validators=[RegexValidator(r'^\d{2}$')])
+
+    def __str__(self):
+        return f"Процентная ставка {self.rate} %"
+
+
 class Credit(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name="Кредит клиента")
     name = models.CharField("Назначение кредита", max_length=100)
     sum_credit = models.PositiveIntegerField("Сумма кредита")
+    beginning_date = models.DateField("Дата начала кредита", auto_now=True)
+    deadline = models.PositiveSmallIntegerField("Срок кредита", max_length=3)
+    end_date = models.DateField("Дата закрытия кредита", null=True, blank=True)
+    interest_rate = models.ManyToManyField(InterestRate,
+                                           verbose_name="процентная ставка",
+                                           related_name="credit_interest_rate",
+                                           )
