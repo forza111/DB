@@ -60,7 +60,8 @@ class UserLocation(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        verbose_name="Пользователь")
+        verbose_name="Пользователь",
+        related_name="location")
     country = models.OneToOneField(
         Country,
         on_delete=models.SET_NULL,
@@ -192,7 +193,7 @@ class InterestRate(models.Model):
 
 class Credit(models.Model):
     user_id = models.ForeignKey(
-        User, on_delete=models.PROTECT, verbose_name="клиент")
+        User, on_delete=models.PROTECT, verbose_name="клиент",related_name="cr")
     name = models.CharField("Назначение кредита", max_length=100)
     sum_credit = models.PositiveIntegerField("Сумма кредита")
     loan_credit = models.PositiveIntegerField(
