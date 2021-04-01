@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Telephone, TypeNumber, Country, Area, City, UserLocation, \
-    Score,Balance,Currency,BankName,Swift
+    Score,Balance,Currency,BankName,Swift, Credit, InterestRate, Payments
 
 
 @admin.register(TypeNumber)
@@ -18,6 +18,13 @@ class CityAdmin(admin.ModelAdmin):
     '''Город'''
     list_select_related = True
 
+@admin.register(Credit)
+class CreditAdmin(admin.ModelAdmin):
+    '''Телефон'''
+    list_display = ("user_id","sum_credit")
+
+
+
 admin.site.register(Country)
 admin.site.register(Area)
 admin.site.register(UserLocation)
@@ -26,6 +33,8 @@ admin.site.register(Balance)
 admin.site.register(Currency)
 admin.site.register(BankName)
 admin.site.register(Swift)
+admin.site.register(InterestRate)
+admin.site.register(Payments)
 
 
 
