@@ -113,6 +113,19 @@ class Currency(models.Model):
     def __str__(self):
         return self.name_currency
 
+class Rate(models.Model):
+    currency = models.OneToOneField(
+        Currency,
+        verbose_name="Валюта",
+        related_name="currency_rate",
+        on_delete=models.CASCADE)
+    date = models.DateTimeField("Дата",auto_now=True)
+    rate = models.DecimalField(max_digits=5, decimal_places=2)
+
+    def __str__(self):
+        return f"Курс {self.currency} по ЦБ на {self.date}"
+
+
 class BankName(models.Model):
     name = models.CharField("Название",max_length=30)
 
