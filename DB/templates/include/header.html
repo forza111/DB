@@ -12,10 +12,13 @@
             <label for="drop" class="toggle">Menu</label>
             <input type="checkbox" id="drop">
             <ul class="menu mt-2">
-                <li><a style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                <li><a href=""
+                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Курс валют</a>
+                </li>
+                <li><a title='курс MOEX на {% get_date_rate_dollar %}'  style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
                     ${% get_rate_dollar %}
                 </a>
-                <li><a style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                <li><a title='курс MOEX на {% get_date_rate_euro %}' style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
                     €{% get_rate_euro %}
                 </a>
                 </li>
