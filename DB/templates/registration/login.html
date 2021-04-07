@@ -1,18 +1,2 @@
-{% load crispy_forms_tags %}
-
-{% block main %}
-<div class="card">
-<div class="card-body">
-<h4 class="card-title">Log in to your account</h4>
-
-<form method="post">
-{% csrf_token %}
-<input type="hidden" name="next" value="{{ next }}">
-
-{{ form|crispy }}
-
-<button type="submit" class="btn btn-primary btn-block">Log in</button>
-</form>
-</div>
-</div>
-{% endblock %}
+{% extends 'accounts/main.html' %}
+{% block header %} {% include 'include/header_login.html' %} {% endblock header %}

@@ -24,9 +24,12 @@
     <!-- //Fonts -->
 </head>
 <body>
+
 <div id="page" class="page">
-    <div class="main-banner bg {% block header %}  {% endblock header %}" id="home">
+    <div class="main-banner bg {% block header_pic %}  {% endblock header_pic %}" id="home">
+        {% block header %}
         {% include 'include/header.html' %}
+        {% endblock header %}
     </div>
     <ol class="breadcrumb editContent">
         <li class="breadcrumb-item">
