@@ -237,3 +237,31 @@ class Payments(models.Model):
 
     def __str__(self):
         return f"Платеж на сумму {self.pay} от {self.date}"
+
+
+class PaymentSystem(models.Model):
+    name = models.CharField("Тип платежной системы", max_length=15)
+
+
+class Card(models.Model):
+    score = models.ForeignKey(
+        Score,
+        on_delete= models.PROTECT,
+        verbose_name="банковская карта",
+        related_name="score_card")
+    card_number = models.CharField(
+        "Номер карты",
+        max_length=18,
+        validators=[RegexValidator(r'^\d{16,18}$')])
+    cvv = models.CharField(
+        "Код безопасности",
+        max_length=3,
+        validators=[RegexValidator(r'^\d{3}$')])
+    date = models.DateField("Срок действия")
+    paymentsystem = models.OneToOneField(
+        PaymentSystem,
+        on_delete=models.PROTECT,
+        verbose_name="тип платежной системы",
+        related_name="paymentsystem_card"
+    )
+
