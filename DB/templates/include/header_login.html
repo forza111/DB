@@ -1,0 +1,71 @@
+{% load account_tag %}
+{% load crispy_forms_tags %}
+<header class="header">
+    <div class="container-fluid px-lg-5">
+        <!-- nav -->
+        <nav class="py-4">
+            <div id="logo">
+                <h1><a href="index.html" class="editContent"
+                       style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(255, 255, 255); font-size: 40px; background-color: rgba(0, 0, 0, 0); font-family: Source Sans Pro;, sans-serif;">DjangoBank</a>
+                </h1>
+            </div>
+
+            <label for="drop" class="toggle">Menu</label>
+            <input type="checkbox" id="drop">
+            <ul class="menu mt-2">
+                <li><a href=""
+                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Курс валют</a>
+                </li>
+                <li><a title='курс MOEX на {% get_date_rate_dollar %}'  style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                    ${% get_rate_dollar %}
+                </a>
+                <li><a title='курс MOEX на {% get_date_rate_euro %}' style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                    €{% get_rate_euro %}
+                </a>
+                </li>
+                <li class="active"><a href="index.html">Главная</a></li>
+                <li>
+                </li>
+                <li>{% if user.is_authenticated %}
+                    <span>{{ user.username }}</span>
+                    <a href="{% url 'logout' %}"
+                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                    Выход</a>
+                    {% else %}
+                    <a href="{% url 'login' %}"
+                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                    Вход</a>
+                    <a href=""
+                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                    Регистрация</a>
+                    {% endif %}</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+    </div>
+</header>
+<!-- //header -->
+<!--/banner-->
+
+<div class="banner-info">
+
+
+{% block main %}
+<div class="card">
+<div class="card-body">
+<h4 class="card-title">Log in to your account</h4>
+
+<form method="post">
+{% csrf_token %}
+<input type="hidden" name="next" value="{{ next }}">
+
+{{ form|crispy }}
+
+<button type="submit" class="btn btn-primary btn-block">Log in</button>
+</form>
+</div>
+</div>
+{% endblock %}
+</div>
+<!--// banner-inner -->
