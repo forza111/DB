@@ -258,7 +258,7 @@ class Card(models.Model):
         max_length=3,
         validators=[RegexValidator(r'^\d{3}$')])
     date = models.DateField("Срок действия")
-    paymentsystem = models.OneToOneField(
+    paymentsystem = models.ForeignKey(
         PaymentSystem,
         on_delete=models.PROTECT,
         verbose_name="тип платежной системы",
