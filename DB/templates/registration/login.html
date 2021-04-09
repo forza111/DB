@@ -1,4 +1,19 @@
-{% extends 'accounts/main.html' %}
-{% block header_pic %} bg1 {% endblock header_pic %}
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} {% endblock title %}
+{% block content %}
+<div class="card">
+<div class="card-body">
+<h4 class="card-title">Log in to your account</h4>
 
-{% block header %} {% include 'include/header_login.html' %} {% endblock header %}
+<form method="post">
+{% csrf_token %}
+<input type="hidden" name="next" value="{{ next }}">
+
+{{ form|crispy }}
+
+<button type="submit" class="btn btn-primary btn-block">Log in</button>
+</form>
+</div>
+</div>
+{% endblock content %}

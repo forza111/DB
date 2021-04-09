@@ -1,62 +1,66 @@
 {% load account_tag %}
-<header class="header">
-    <div class="container-fluid px-lg-5">
-        <!-- nav -->
-        <nav class="py-4">
-            <div id="logo">
-                <h1><a href="index.html" class="editContent"
-                       style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(255, 255, 255); font-size: 40px; background-color: rgba(0, 0, 0, 0); font-family: Source Sans Pro;, sans-serif;">DjangoBank</a>
-                </h1>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            <label for="drop" class="toggle">Menu</label>
-            <input type="checkbox" id="drop">
-            <ul class="menu mt-2">
-                <li><a href=""
-                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Курс валют</a>
-                </li>
-                <li><a title='курс MOEX на {% get_date_rate_dollar %}'  style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
-                    ${% get_rate_dollar %}
-                </a>
-                <li><a title='курс MOEX на {% get_date_rate_euro %}' style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
-                    €{% get_rate_euro %}
-                </a>
-                </li>
-                <li class="active"><a href="index.html">Главная</a></li>
-                <li>
-                </li>
-                <li>{% if user.is_authenticated %}
-                    <span>{{ user.username }}</span>
-                    <a href="{% url 'logout' %}"
-                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
-                    Выход</a>
-                    {% else %}
-                    <a href="{% url 'login' %}"
-                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
-                    Вход</a>
-                    <a href=""
-                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
-                    Регистрация</a>
-                    {% endif %}</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- //nav -->
-    </div>
-</header>
-<!-- //header -->
-<!--/banner-->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
 
-<div class="banner-info">
+    <ul class="navbar-nav my-2 my-lg-0">
 
-    <h3 class="mb-1 editContent">ВКЛАДЫ </h3>
-    <h3 class="mb-1 editContent">12%  </h3>
-    <h3 class="mb-1 editContent">ГОДОВЫХ  </h3>
+      <li class="nav-item">
+      <a title='курс MOEX на {% get_date_rate_dollar %}' class="nav-link">
+          ${% get_rate_dollar %}</a>
+      </li>
 
+      <li class="nav-item">
+      <a title='курс MOEX на {% get_date_rate_euro %}' class="nav-link">
+          €{% get_rate_euro %}</a>
+      </li>
 
-    <div class="ban-buttons">
+      <li>{% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{user.username}}</a>
+        </li>
 
+        <li class="nav-item active">
+          <a class="nav-link" a href="{% url 'logout' %}">
+        Выход<span class="sr-only">(current)</span></a>
+      </li>
+        {% else %}
+      <li class="nav-item active">
+        <a class="nav-link" a href="{% url 'login' %}">
+          Вход <span class="sr-only">(current)</span></a>
+      </li>
 
-    </div>
-</div>
-<!--// banner-inner -->
+      <li class="nav-item active">
+        <a class="nav-link" a href="">
+          Регистрация <span class="sr-only">(current)</span></a>
+      {% endif %}
+    </ul>
+    </li>
+  </div>
+</nav>
