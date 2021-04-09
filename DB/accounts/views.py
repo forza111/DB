@@ -1,11 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import ListView, DetailView
-from . models import Score
+from . models import Score, User
 from django.contrib.auth.decorators import login_required
 
+def index(request):
+    return render(request, 'accounts/main.html')
 
-class ScoreView(ListView):
-    model = Score
-    queryset = Score.objects.all()
-    template_name = 'accounts/personal_cabinet.html'
+
+class UserDetail(LoginRequiredMixin,DetailView):
+    model = User
+    template_name = "accounts/personal_cabinet.html"
+
