@@ -30,8 +30,18 @@
     </ul>
 
     <ul class="navbar-nav my-2 my-lg-0">
-      <li>{% if user.is_authenticated %}
 
+      <li class="nav-item">
+      <a title='курс MOEX на {% get_date_rate_dollar %}' class="nav-link">
+          ${% get_rate_dollar %}</a>
+      </li>
+
+      <li class="nav-item">
+      <a title='курс MOEX на {% get_date_rate_euro %}' class="nav-link">
+          €{% get_rate_euro %}</a>
+      </li>
+
+      <li>{% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{user.username}}</a>
         </li>

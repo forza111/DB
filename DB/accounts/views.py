@@ -8,4 +8,4 @@ from django.contrib.auth.decorators import login_required
 class ScoreView(ListView):
     model = Score
     queryset = Score.objects.all()
-    template_name = 'accounts/main.html'
+    template_name = 'accounts/personal_cabinet.html'
