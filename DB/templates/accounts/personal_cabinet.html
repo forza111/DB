@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Hola, {{user.username}}</h1>
+
+
+
+{% for s in score %}
+    <li>{{ s.score_balance.balance }}
+        {{ s.currency.get.symbol }}
+
+{% endfor %}
+
+
 {% endblock content %}

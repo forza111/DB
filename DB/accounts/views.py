@@ -13,3 +13,7 @@ class UserDetail(LoginRequiredMixin,DetailView):
     model = User
     template_name = "accounts/personal_cabinet.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['score'] = self.object.user_score.all()
+        return context

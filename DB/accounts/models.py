@@ -109,6 +109,7 @@ class UserLocation(models.Model):
 
 class Currency(models.Model):
     name_currency = models.CharField("Валюта", max_length=20)
+    symbol = models.CharField("Сивол валюты", max_length=5)
 
     def __str__(self):
         return self.name_currency
@@ -154,7 +155,7 @@ class Score(models.Model):
         unique=True,
         max_length=20,
         validators=[RegexValidator(r'^\d{20}$')])
-    bank_name = models.OneToOneField(
+    bank_name = models.ForeignKey(
         BankName,
         verbose_name="Банк",
         on_delete=models.SET_NULL,
@@ -186,7 +187,7 @@ class Balance(models.Model):
     score_id = models.OneToOneField(
         Score,
         verbose_name="Счет",
-        related_name="score",
+        related_name="score_balance",
         on_delete=models.CASCADE)
     balance = models.PositiveIntegerField("Баланс", null=True, blank=True)
 
@@ -242,6 +243,8 @@ class Payments(models.Model):
 class PaymentSystem(models.Model):
     name = models.CharField("Тип платежной системы", max_length=15)
 
+    def __str__(self):
+        return self.name
 
 class Card(models.Model):
     score = models.ForeignKey(
@@ -265,3 +268,5 @@ class Card(models.Model):
         related_name="paymentsystem_card"
     )
 
+    def __str__(self):
+        return f"{self.paymentsystem} {self.card_number}"
