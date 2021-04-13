@@ -3,12 +3,29 @@
 <h1>Hola, {{user.username}}</h1>
 
 
-
-{% for s in score %}
-    <li>{{ s.score_balance.balance }}
-        {{ s.currency.get.symbol }}
+{% for score in all_score %}
+<div class="container">
+    <div class="row">
+    <div class="col">{{ score.score_card.get.paymentsystem }}</div>
+    <div class="col">2</div>
+    <div class="w-100"></div>
+    <div class="col">{{ score.score_balance.balance }}
+        {{ score.currency.get.symbol }}</div>
+    <div class="col">4</div>
+</div></div>
 
 {% endfor %}
 
+{% if all_credit %}
 
+<h5>Кредиты</h5>
+{% for credit in all_credit %}
+<li>{{ credit.sum_credit }}
+    {{ credit.currency.symbol }}
+{% endfor %}
+
+
+{% else %}
+<h5>У вас нет открытых кредитов</h5>
+{% endif %}
 {% endblock content %}

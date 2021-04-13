@@ -207,9 +207,17 @@ class InterestRate(models.Model):
 
 class Credit(models.Model):
     user_id = models.ForeignKey(
-        User, on_delete=models.PROTECT, verbose_name="клиент",related_name="cr")
+        User,
+        on_delete=models.PROTECT,
+        verbose_name="клиент",
+        related_name="user_credit")
     name = models.CharField("Назначение кредита", max_length=100)
     sum_credit = models.PositiveIntegerField("Сумма кредита")
+    currency = models.ForeignKey(
+        Currency,
+        on_delete=models.PROTECT,
+        verbose_name="Валюта",
+    )
     loan_credit = models.PositiveIntegerField(
         "Остаток по кредиту", null=True, blank=True)
     beginning_date = models.DateField("Дата начала кредита", auto_now=True)
