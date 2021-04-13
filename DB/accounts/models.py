@@ -261,7 +261,7 @@ class TypeCard(models.Model):
         return self.name
 
 class Card(models.Model):
-    score = models.ForeignKey(
+    score = models.OneToOneField(
         Score,
         on_delete= models.PROTECT,
         verbose_name="банковская карта",

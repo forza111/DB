@@ -4,19 +4,18 @@
 
 
 {% for score in card_score %}
-{% for c in score.score_card.all %}
 <div class="container">
     <div class="row">
     <div class="col">
-        <small>{{ c.paymentsystem }}</small>
+        <small>{{ score.score_card.paymentsystem }}</small>
     </div>
     <div class="col">
-        ****{{c.card_number | slice:":4"}}
-    </div>{% endfor %}
+        ****{{score.score_card.card_number | slice:":4"}}
+    </div>
     <div class="w-100"></div>
     <div class="col"><p>{{ score.score_balance.balance }}
     {{ score.currency.get }}</div>
-    <div class="col">4</div>
+    <div class="col">{{score.score_card.type_card}}</div>
 
         {% endfor %}
 </div></div>
