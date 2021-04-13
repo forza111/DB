@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Telephone, TypeNumber, Country, Area, City, UserLocation, \
     Score,Balance,Currency,BankName,Swift, Credit, InterestRate, Payments,Rate, \
-    Card, PaymentSystem
+    Card, PaymentSystem, TypeCard
 
 
 @admin.register(TypeNumber)
@@ -39,6 +39,7 @@ admin.site.register(Payments)
 admin.site.register(Rate)
 admin.site.register(Card)
 admin.site.register(PaymentSystem)
+admin.site.register(TypeCard)
 
 
 

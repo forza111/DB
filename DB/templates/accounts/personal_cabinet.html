@@ -3,18 +3,25 @@
 <h1>Hola, {{user.username}}</h1>
 
 
-{% for score in all_score %}
+{% for score in card_score %}
+{% for c in score.score_card.all %}
 <div class="container">
     <div class="row">
-    <div class="col">{{ score.score_card.get.paymentsystem }}</div>
-    <div class="col">2</div>
+    <div class="col">
+        <small>{{ c.paymentsystem }}</small>
+    </div>
+    <div class="col">
+        ****{{c.card_number | slice:":4"}}
+    </div>{% endfor %}
     <div class="w-100"></div>
-    <div class="col">{{ score.score_balance.balance }}
-        {{ score.currency.get.symbol }}</div>
+    <div class="col"><p>{{ score.score_balance.balance }}
+    {{ score.currency.get }}</div>
     <div class="col">4</div>
+
+        {% endfor %}
 </div></div>
 
-{% endfor %}
+
 
 {% if all_credit %}
 

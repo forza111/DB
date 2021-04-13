@@ -112,7 +112,7 @@ class Currency(models.Model):
     symbol = models.CharField("Сивол валюты", max_length=5)
 
     def __str__(self):
-        return self.name_currency
+        return self.symbol
 
 class Rate(models.Model):
     currency = models.OneToOneField(
@@ -254,6 +254,12 @@ class PaymentSystem(models.Model):
     def __str__(self):
         return self.name
 
+class TypeCard(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
 class Card(models.Model):
     score = models.ForeignKey(
         Score,
@@ -274,6 +280,12 @@ class Card(models.Model):
         on_delete=models.PROTECT,
         verbose_name="тип платежной системы",
         related_name="paymentsystem_card"
+    )
+    type_card = models.ForeignKey(
+        TypeCard,
+        on_delete=models.PROTECT,
+        verbose_name="Тип карты",
+        related_name="card"
     )
 
     def __str__(self):
