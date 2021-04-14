@@ -23,15 +23,25 @@
 
 
 {% if all_credit %}
-
 <h5>Кредиты</h5>
 {% for credit in all_credit %}
-<li>{{ credit.sum_credit }}
+<div class="container">
+    <div class="row">
+
+    <div class="col">
+        <small>{{credit.name}}</small>
+    </div>
+
+        <div class="col"><em class="text-dark">11 мая 2021</em>
+    </div>
+    <div class="w-100"></div>
+    <div class="col"><p>
+    {{ credit.loan_credit }}
     {{ credit.currency.symbol }}
+    </div>
+
+        <div class="col"><em class="text-dark">к оплате 9064 Р</em></div>
 {% endfor %}
-
-
-{% else %}
-<h5>У вас нет открытых кредитов</h5>
+</div></div>
 {% endif %}
 {% endblock content %}
