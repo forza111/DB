@@ -229,12 +229,8 @@ class Credit(models.Model):
         on_delete=models.PROTECT,
         verbose_name="Валюта",
     )
-    loan_credit = models.PositiveIntegerField(
-        "Остаток по кредиту", null=True, blank=True)
     beginning_date = models.DateField("Дата начала кредита", auto_now=True)
     deadline = models.PositiveSmallIntegerField("Срок кредита", max_length=3)
-    end_date = models.DateField(
-        "Дата закрытия кредита", null=True, blank=True)
     interest_rate = models.ManyToManyField(
         InterestRate,
         verbose_name="процентная ставка",
