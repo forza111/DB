@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from smart_selects.db_fields import ChainedForeignKey
 from django.core.validators import RegexValidator
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 class TypeNumber(models.Model):
     type_number = models.CharField("Тип телефона",max_length=20)
@@ -239,6 +241,51 @@ class Credit(models.Model):
 
     def __str__(self):
         return f"Кредит пользователя {self.user_id}"
+
+
+class CreditInfo(models.Model):
+    credit = models.OneToOneField(
+        Credit,
+        verbose_name="Кредит",
+        related_name="info",
+        on_delete=models.CASCADE,
+    )
+    completion_date = models.DateField(
+        "Дата завершения кредита",
+        null=True,
+        blank=True
+    )
+    interest_rate_mounth = models.DecimalField(
+        "Процентная ставка за месяц",
+        max_digits=5,
+        decimal_places=2,
+        null=True,
+        blank=True)
+    mounthly_payments = models.DecimalField(
+        "Ежемесячный платеж",
+        max_digits=5,
+        decimal_places=2,
+        null=True,
+        blank=True)
+    total_debt = models.DecimalField(
+        "Общая задолженность",
+        max_digits=5,
+        decimal_places=2,
+        null=True,
+        blank=True)
+    paid = models.DecimalField(
+        "Оплачено",
+        max_digits=5,
+        decimal_places=2,
+        null=True,
+        blank=True
+    )
+
+@receiver(post_save, sender=Credit)
+def createcreditinfo(sender, instance, **kwargs):
+    if not hasattr(instance, "info"):
+        crinfo = CreditInfo.objects.create(credit=instance)
+
 
 class Payments(models.Model):
     credit = models.ForeignKey(
