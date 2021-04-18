@@ -204,6 +204,12 @@ class InterestRate(models.Model):
     def __str__(self):
         return f"Процентная ставка {self.rate} %"
 
+class CreditTarget(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
 
 class Credit(models.Model):
     user_id = models.ForeignKey(
@@ -211,7 +217,12 @@ class Credit(models.Model):
         on_delete=models.PROTECT,
         verbose_name="клиент",
         related_name="user_credit")
-    name = models.CharField("Назначение кредита", max_length=100)
+    target = models.ForeignKey(
+        CreditTarget,
+        verbose_name="Назначение кредита",
+        related_name="cr",
+        on_delete=models.PROTECT
+    )
     sum_credit = models.PositiveIntegerField("Сумма кредита")
     currency = models.ForeignKey(
         Currency,
@@ -290,3 +301,5 @@ class Card(models.Model):
 
     def __str__(self):
         return f"{self.paymentsystem} {self.card_number}"
+
+
