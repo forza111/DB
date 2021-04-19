@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from smart_selects.db_fields import ChainedForeignKey
 from django.core.validators import RegexValidator
 from django.dispatch import receiver
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 
 class TypeNumber(models.Model):
     type_number = models.CharField("Тип телефона",max_length=20)
@@ -257,8 +257,8 @@ class CreditInfo(models.Model):
     )
     interest_rate_mounth = models.DecimalField(
         "Процентная ставка за месяц",
-        max_digits=5,
-        decimal_places=2,
+        max_digits=20,
+        decimal_places=18,
         null=True,
         blank=True)
     mounthly_payments = models.DecimalField(
@@ -282,12 +282,24 @@ class CreditInfo(models.Model):
     )
 
     def __str__(self):
-        return self.credit
+        return str(self.credit)
+
+    def create_irm(self):
+        self.interest_rate_mounth = \
+            int(self.credit.interest_rate.get().rate)/12/100
+        return self.interest_rate_mounth
+
+@receiver(pre_save, sender = CreditInfo)
+def irm(sender, instance, **kwargs):
+    instance.interest_rate_mounth = instance.create_irm()
 
 @receiver(post_save, sender=Credit)
 def createcreditinfo(sender, instance, **kwargs):
     if not hasattr(instance, "info"):
         crinfo = CreditInfo.objects.create(credit=instance)
+    if hasattr(instance, "info"):
+        cr1info = CreditInfo.objects.update(credit=instance)
+
 
 
 class Payments(models.Model):
