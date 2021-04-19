@@ -281,6 +281,9 @@ class CreditInfo(models.Model):
         blank=True
     )
 
+    def __str__(self):
+        return self.credit
+
 @receiver(post_save, sender=Credit)
 def createcreditinfo(sender, instance, **kwargs):
     if not hasattr(instance, "info"):
