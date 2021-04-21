@@ -4,6 +4,7 @@ from smart_selects.db_fields import ChainedForeignKey
 from django.core.validators import RegexValidator
 from django.dispatch import receiver
 from django.db.models.signals import post_save, pre_save
+from dateutil.relativedelta import relativedelta
 
 class TypeNumber(models.Model):
     type_number = models.CharField("Тип телефона",max_length=20)
@@ -324,6 +325,10 @@ class CreditInfo(models.Model):
         self.interest_charges = self.total_debt-self.credit.sum_credit
         return self.interest_charges
 
+    def create_completion_date(self):
+        self.completion_date = self.credit.beginning_date + relativedelta(years=self.credit.deadline)
+        return self.completion_date
+
 @receiver(pre_save, sender=CreditInfo)
 def irm(sender, instance, **kwargs):
     instance.interest_rate_mounth = instance.create_irm()
@@ -332,6 +337,7 @@ def irm(sender, instance, **kwargs):
     instance.mounthly_payments = instance.create_mounthly_payments()
     instance.total_debt = instance.create_total_debt()
     instance.interest_charges = instance.create_interest_charges()
+    instance.completion_date = instance.create_completion_date()
 
 
 @receiver(post_save, sender=Credit)
