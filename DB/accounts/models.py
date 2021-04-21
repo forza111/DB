@@ -261,10 +261,16 @@ class CreditInfo(models.Model):
         decimal_places=18,
         null=True,
         blank=True)
+    total_rate = models.DecimalField(
+        "Общая ставка",
+        max_digits=20,
+        decimal_places=18,
+        null=True,
+        blank=True)
     mounthly_payments = models.DecimalField(
         "Ежемесячный платеж",
-        max_digits=5,
-        decimal_places=2,
+        max_digits=8,
+        decimal_places=1,
         null=True,
         blank=True)
     total_debt = models.DecimalField(
@@ -289,16 +295,29 @@ class CreditInfo(models.Model):
             int(self.credit.interest_rate.get().rate)/12/100
         return self.interest_rate_mounth
 
-@receiver(pre_save, sender = CreditInfo)
+    def create_total_rate(self):
+        self.total_rate = (1 + self.interest_rate_mounth)**(self.credit.deadline*12)
+        return self.total_rate
+
+    def create_mounthly_payments(self):
+        self.mounthly_payments = \
+            self.credit.sum_credit*self.interest_rate_mounth*self.total_rate/(self.total_rate-1)
+        return self.mounthly_payments
+
+@receiver(pre_save, sender=CreditInfo)
 def irm(sender, instance, **kwargs):
     instance.interest_rate_mounth = instance.create_irm()
+    instance.total_rate = instance.create_total_rate()
+    instance.mounthly_payments = instance.create_mounthly_payments()
 
 @receiver(post_save, sender=Credit)
 def createcreditinfo(sender, instance, **kwargs):
     if not hasattr(instance, "info"):
         crinfo = CreditInfo.objects.create(credit=instance)
     if hasattr(instance, "info"):
-        cr1info = CreditInfo.objects.update(credit=instance)
+        crinfo = CreditInfo.objects.get(credit=instance)
+        crinfo.credit = instance
+        crinfo.save()
 
 
 
