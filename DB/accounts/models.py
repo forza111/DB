@@ -233,10 +233,11 @@ class Credit(models.Model):
     )
     beginning_date = models.DateField("Дата начала кредита", auto_now=True)
     deadline = models.PositiveSmallIntegerField("Срок кредита", max_length=3)
-    interest_rate = models.ManyToManyField(
+    interest_rate = models.ForeignKey(
         InterestRate,
         verbose_name="процентная ставка",
         related_name="credit_interest_rate",
+        on_delete=models.PROTECT,
         )
 
     def __str__(self):
@@ -299,7 +300,7 @@ class CreditInfo(models.Model):
 
     def create_irm(self):
         self.interest_rate_mounth = \
-            int(self.credit.interest_rate.get().rate)/12/100
+            int(self.credit.interest_rate.rate)/12/100
         return self.interest_rate_mounth
 
     def create_deadline_mounth(self):
