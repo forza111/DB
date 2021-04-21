@@ -267,15 +267,22 @@ class CreditInfo(models.Model):
         decimal_places=18,
         null=True,
         blank=True)
+    deadline_mounth = models.PositiveSmallIntegerField("Срок кредита, мес")
     mounthly_payments = models.DecimalField(
         "Ежемесячный платеж",
-        max_digits=8,
-        decimal_places=1,
+        max_digits=15,
+        decimal_places=2,
         null=True,
         blank=True)
     total_debt = models.DecimalField(
-        "Общая задолженность",
-        max_digits=5,
+        "Долг + проценты",
+        max_digits=15,
+        decimal_places=2,
+        null=True,
+        blank=True)
+    interest_charges = models.DecimalField(
+        "Начисленные проценты",
+        max_digits=15,
         decimal_places=2,
         null=True,
         blank=True)
@@ -295,20 +302,36 @@ class CreditInfo(models.Model):
             int(self.credit.interest_rate.get().rate)/12/100
         return self.interest_rate_mounth
 
+    def create_deadline_mounth(self):
+        self.deadline_mounth = self.credit.deadline * 12
+        return self.deadline_mounth
+
     def create_total_rate(self):
-        self.total_rate = (1 + self.interest_rate_mounth)**(self.credit.deadline*12)
+        self.total_rate = (1 + self.interest_rate_mounth)**self.deadline_mounth
         return self.total_rate
 
     def create_mounthly_payments(self):
         self.mounthly_payments = \
-            self.credit.sum_credit*self.interest_rate_mounth*self.total_rate/(self.total_rate-1)
+            round(self.credit.sum_credit*self.interest_rate_mounth*self.total_rate/(self.total_rate-1),2)
         return self.mounthly_payments
+
+    def create_total_debt(self):
+        self.total_debt = self.mounthly_payments*self.deadline_mounth
+        return self.total_debt
+
+    def create_interest_charges(self):
+        self.interest_charges = self.total_debt-self.credit.sum_credit
+        return self.interest_charges
 
 @receiver(pre_save, sender=CreditInfo)
 def irm(sender, instance, **kwargs):
     instance.interest_rate_mounth = instance.create_irm()
+    instance.deadline_mounth = instance.create_deadline_mounth()
     instance.total_rate = instance.create_total_rate()
     instance.mounthly_payments = instance.create_mounthly_payments()
+    instance.total_debt = instance.create_total_debt()
+    instance.interest_charges = instance.create_interest_charges()
+
 
 @receiver(post_save, sender=Credit)
 def createcreditinfo(sender, instance, **kwargs):
