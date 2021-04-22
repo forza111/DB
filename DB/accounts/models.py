@@ -5,6 +5,7 @@ from django.core.validators import RegexValidator
 from django.dispatch import receiver
 from django.db.models.signals import post_save, pre_save
 from dateutil.relativedelta import relativedelta
+import decimal
 
 class TypeNumber(models.Model):
     type_number = models.CharField("Тип телефона",max_length=20)
@@ -290,9 +291,9 @@ class CreditInfo(models.Model):
         blank=True)
     paid = models.DecimalField(
         "Оплачено",
-        max_digits=5,
+        max_digits=15,
         decimal_places=2,
-        default=0.0
+        default=decimal.Decimal('0')
     )
     debt = models.DecimalField(
         "Осталось заплатить",
@@ -335,7 +336,7 @@ class CreditInfo(models.Model):
         return self.completion_date
 
     def create_debt(self):
-        self.debt = self.total_debt
+        self.debt = decimal.Decimal(self.total_debt)-self.paid
         return self.debt
 
 @receiver(pre_save, sender=CreditInfo)
