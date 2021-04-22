@@ -227,7 +227,12 @@ class Credit(models.Model):
         related_name="cr",
         on_delete=models.PROTECT
     )
-    sum_credit = models.PositiveIntegerField("Сумма кредита")
+    sum_credit = models.DecimalField(
+        "Сумма кредита",
+        max_digits=15,
+        decimal_places=2,
+        null=True,
+        blank=True)
     currency = models.ForeignKey(
         Currency,
         on_delete=models.PROTECT,
@@ -320,7 +325,10 @@ class CreditInfo(models.Model):
 
     def create_mounthly_payments(self):
         self.mounthly_payments = \
-            round(self.credit.sum_credit*self.interest_rate_mounth*self.total_rate/(self.total_rate-1),2)
+            round(decimal.Decimal(self.credit.sum_credit)*
+                  decimal.Decimal(self.interest_rate_mounth)*
+                  decimal.Decimal(self.total_rate)/
+                  (decimal.Decimal(self.total_rate)-1),2)
         return self.mounthly_payments
 
     def create_total_debt(self):
@@ -371,7 +379,12 @@ class Payments(models.Model):
         blank=True,
         verbose_name="кредит",
         related_name="credit_payments")
-    pay = models.PositiveIntegerField("Платеж")
+    pay = models.DecimalField(
+        "Платеж",
+        max_digits=15,
+        decimal_places=2,
+        null=True,
+        blank=True)
     date = models.DateField("Дата платежа", auto_now=True)
 
     def __str__(self):
