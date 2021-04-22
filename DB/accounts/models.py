@@ -292,9 +292,14 @@ class CreditInfo(models.Model):
         "Оплачено",
         max_digits=5,
         decimal_places=2,
-        null=True,
-        blank=True
+        default=0.0
     )
+    debt = models.DecimalField(
+        "Осталось заплатить",
+        max_digits=15,
+        decimal_places=2,
+        null=True,
+        blank=True)
 
     def __str__(self):
         return str(self.credit)
@@ -329,6 +334,10 @@ class CreditInfo(models.Model):
         self.completion_date = self.credit.beginning_date + relativedelta(years=self.credit.deadline)
         return self.completion_date
 
+    def create_debt(self):
+        self.debt = self.total_debt
+        return self.debt
+
 @receiver(pre_save, sender=CreditInfo)
 def irm(sender, instance, **kwargs):
     instance.interest_rate_mounth = instance.create_irm()
@@ -338,6 +347,8 @@ def irm(sender, instance, **kwargs):
     instance.total_debt = instance.create_total_debt()
     instance.interest_charges = instance.create_interest_charges()
     instance.completion_date = instance.create_completion_date()
+    instance.debt = instance.create_debt()
+
 
 
 @receiver(post_save, sender=Credit)

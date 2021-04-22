@@ -18,3 +18,6 @@ class UserDetail(LoginRequiredMixin,DetailView):
         context['card_score'] = self.object.user_score.exclude(score_card=None)
         context['all_credit'] = self.object.user_credit.all()
         return context
+
+    def get_object(self):
+        return self.request.user
