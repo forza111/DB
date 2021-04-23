@@ -359,7 +359,6 @@ def irm(sender, instance, **kwargs):
     instance.debt = instance.create_debt()
 
 
-
 @receiver(post_save, sender=Credit)
 def createcreditinfo(sender, instance, **kwargs):
     if not hasattr(instance, "info"):
@@ -369,6 +368,32 @@ def createcreditinfo(sender, instance, **kwargs):
         crinfo.credit = instance
         crinfo.save()
 
+
+
+class PaymentsInfo(models.Model):
+    credit = models.ForeignKey(
+        Credit,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        verbose_name="Информация о платежах",
+        related_name="credit_payments_info")
+    number = models.PositiveSmallIntegerField("Номер платежа")
+    date = models.DateField("Дата платежа")
+    mounthly_payments = models.DecimalField(
+        "Ежемесячный платеж",
+        max_digits=15,
+        decimal_places=2,
+        null=True,
+        blank=True)
+    debt = models.DecimalField(
+        "Осталок кредита",
+        max_digits=15,
+        decimal_places=2,
+        null=True,
+        blank=True)
+
+for i in range
 
 
 class Payments(models.Model):
@@ -433,5 +458,7 @@ class Card(models.Model):
 
     def __str__(self):
         return f"{self.paymentsystem} {self.card_number}"
+
+
 
 
