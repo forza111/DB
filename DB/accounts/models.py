@@ -369,6 +369,22 @@ def createcreditinfo(sender, instance, **kwargs):
         crinfo.save()
 
 
+@receiver(post_save, sender=CreditInfo)
+def createpaymentinfo(sender, instance, **kwargs):
+    if not hasattr(instance.credit, "credit_payments_info") or \
+            instance.credit.credit_payments_info.all().count() == 0:
+        for i in range(1,instance.deadline_mounth+1):
+            crpaymentinfo = PaymentsInfo.objects.create(
+                credit=instance.credit,
+                date=instance.credit.beginning_date,
+                number=i)
+    else:
+        PaymentsInfo.objects.all().delete()
+        return createpaymentinfo(sender, instance, **kwargs)
+
+
+
+
 
 class PaymentsInfo(models.Model):
     credit = models.ForeignKey(
@@ -376,7 +392,7 @@ class PaymentsInfo(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        verbose_name="Информация о платежах",
+        verbose_name="Кредит",
         related_name="credit_payments_info")
     number = models.PositiveSmallIntegerField("Номер платежа")
     date = models.DateField("Дата платежа")
@@ -392,8 +408,10 @@ class PaymentsInfo(models.Model):
         decimal_places=2,
         null=True,
         blank=True)
+    def __str__(self):
+        return f"{self.number} платеж {self.credit.user_id}"
 
-for i in range
+
 
 
 class Payments(models.Model):
