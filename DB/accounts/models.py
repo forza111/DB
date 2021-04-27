@@ -376,12 +376,14 @@ def createpaymentinfo(sender, instance, **kwargs):
         for i in range(1,instance.deadline_mounth+1):
             crpaymentinfo = PaymentsInfo.objects.create(
                 credit=instance.credit,
-                date=instance.credit.beginning_date,
-                number=i)
+                date=instance.credit.beginning_date+relativedelta(months=i),
+                number=i,
+                mounthly_payments=instance.mounthly_payments,
+                debt=instance.total_debt-instance.mounthly_payments*i
+            )
     else:
         PaymentsInfo.objects.filter(credit=instance.credit).delete()
         return createpaymentinfo(sender, instance, **kwargs)
-    instance.mounthly_payments = instance.create_mounthly_payments()
 
 
 class PaymentsInfo(models.Model):
@@ -407,9 +409,6 @@ class PaymentsInfo(models.Model):
         null=True,
         blank=True)
 
-    def create_mounthly_payments(self):
-        self.mounthly_payments = self.credit
-        return self.mounthly_payments
 
     def __str__(self):
         return f"{self.number} платеж {self.credit.user_id} {self.credit.target}"

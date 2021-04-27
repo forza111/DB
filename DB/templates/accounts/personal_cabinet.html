@@ -29,7 +29,17 @@
     <div class="row">
 
     <div class="col">
-        <small>{{credit.target}}</small>
+         <small class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{credit.target}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'personal_cabinet' %}">Личный кабинет</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </small>
     </div>
 
         <div class="col"><em class="text-dark">11 мая 2021</em>
