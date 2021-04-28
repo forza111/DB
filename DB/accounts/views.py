@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import ListView, DetailView
-from . models import Score, User
+from . models import Score, User, Credit
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -21,3 +21,8 @@ class UserDetail(LoginRequiredMixin,DetailView):
 
     def get_object(self):
         return self.request.user
+
+
+class PaymentsShedule(DetailView):
+    model = Credit
+    template_name = "accounts/payment_schedule.html"

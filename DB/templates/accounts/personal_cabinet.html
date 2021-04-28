@@ -34,7 +34,7 @@
           {{credit.target}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'personal_cabinet' %}">Личный кабинет</a>
+          <a class="dropdown-item" href="{% url 'payment_schedule' credit.id %}">График платежей</a>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
