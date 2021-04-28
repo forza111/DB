@@ -26,3 +26,9 @@ class UserDetail(LoginRequiredMixin,DetailView):
 class PaymentsShedule(DetailView):
     model = Credit
     template_name = "accounts/payment_schedule.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['payments_info'] = self.object.credit_payments_info.all()
+        return context
+

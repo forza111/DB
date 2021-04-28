@@ -2,4 +2,27 @@
 {% block content %}
 
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Дата платежа</th>
+      <th scope="col">Сумма платежа</th>
+      <th scope="col">Осталось внести</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    {% for payments in payments_info %}
+      <th scope="row">{{ payments.number }}</th>
+      <td>{{ payments.date }}</td>
+      <td>{{ payments.mounthly_payments }} {{ payments.credit.currency }}</td>
+      <td>{{ payments.debt }} {{ payments.credit.currency }}</td>
+    </tr>
+      {% endfor %}
+
+  </tbody>
+</table>
+
+
 {% endblock content %}
