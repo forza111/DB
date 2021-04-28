@@ -434,6 +434,13 @@ class Payments(models.Model):
         return f"Платеж на сумму {self.pay} от {self.date}"
 
 
+@receiver(post_save, sender=Payments)
+def changepaid(sender, instance, **kwargs):
+    p = Credit.objects.get(credit_payments=instance)
+    p.info.paid += instance.pay
+    p.save()
+
+
 class PaymentSystem(models.Model):
     name = models.CharField("Тип платежной системы", max_length=15)
 
