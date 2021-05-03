@@ -6,6 +6,15 @@ from django.dispatch import receiver
 from django.db.models.signals import post_save, pre_save
 from dateutil.relativedelta import relativedelta
 import decimal
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+
+def validate_card(object):
+    if object.score.type_score != "текущий":
+        raise ValidationError(
+            _("%(value)s is not an even number"),
+            params={"value": object},
+        )
 
 class TypeNumber(models.Model):
     type_number = models.CharField("Тип телефона",max_length=20)
@@ -143,6 +152,12 @@ class Swift(models.Model):
     def __str__(self):
         return self.name
 
+class TypeScore(models.Model):
+    name = models.CharField("Тип счета",max_length=30)
+
+    def __str__(self):
+        return self.name
+
 
 class Score(models.Model):
     user_id = models.ForeignKey(
@@ -150,10 +165,12 @@ class Score(models.Model):
         on_delete=models.CASCADE,
         verbose_name="Пользователь",
         related_name="user_score")
-    currency = models.ManyToManyField(
+    currency = models.ForeignKey(
         Currency,
+        on_delete=models.SET_NULL,
         verbose_name="Валюта счета",
-        related_name="currency_score")
+        related_name="currency_score",
+        null=True)
     score_number = models.CharField(
         "Номер счета",
         unique=True,
@@ -183,9 +200,15 @@ class Score(models.Model):
         null=True,
         blank=True,
         verbose_name="SWIFT-код")
+    type_score = models.ForeignKey(
+        TypeScore,
+        on_delete=models.SET_NULL,
+        verbose_name="Тип счета",
+        related_name="sc",
+        null=True)
 
     def __str__(self):
-        return f"Счет {self.user_id} Валюта: {self.currency.get()}"
+        return f"Счет {self.user_id} Валюта: {self.currency}"
 
 class Balance(models.Model):
     score_id = models.OneToOneField(
@@ -216,11 +239,13 @@ class CreditTarget(models.Model):
 
 
 class Credit(models.Model):
-    user_id = models.ForeignKey(
-        User,
-        on_delete=models.PROTECT,
-        verbose_name="клиент",
-        related_name="user_credit")
+    score = models.OneToOneField(
+        Score,
+        verbose_name="Счет",
+        related_name="score_credit",
+        on_delete=models.CASCADE,
+        null=True
+    )
     target = models.ForeignKey(
         CreditTarget,
         verbose_name="Назначение кредита",
@@ -233,11 +258,6 @@ class Credit(models.Model):
         decimal_places=2,
         null=True,
         blank=True)
-    currency = models.ForeignKey(
-        Currency,
-        on_delete=models.PROTECT,
-        verbose_name="Валюта",
-    )
     beginning_date = models.DateField("Дата начала кредита", auto_now=True)
     deadline = models.PositiveSmallIntegerField("Срок кредита", max_length=3)
     interest_rate = models.ForeignKey(
@@ -248,7 +268,7 @@ class Credit(models.Model):
         )
 
     def __str__(self):
-        return f"Кредит пользователя {self.user_id}"
+        return f"Кредит пользователя {self.score}"
 
 
 class CreditInfo(models.Model):
@@ -411,7 +431,7 @@ class PaymentsInfo(models.Model):
 
 
     def __str__(self):
-        return f"{self.number} платеж {self.credit.user_id} {self.credit.target}"
+        return f"{self.number} платеж {self.credit} {self.credit.target}"
 
 
 class Payments(models.Model):
@@ -454,10 +474,11 @@ class TypeCard(models.Model):
         return self.name
 
 class Card(models.Model):
+
     score = models.OneToOneField(
         Score,
         on_delete= models.PROTECT,
-        verbose_name="банковская карта",
+        verbose_name="Счет",
         related_name="score_card")
     card_number = models.CharField(
         "Номер карты",

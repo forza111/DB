@@ -22,20 +22,20 @@
 
 
 
-{% if all_credit %}
+{% if all_score_credit %}
 <h5>Кредиты</h5>
-{% for credit in all_credit %}
+{% for score in all_score_credit %}
 <div class="container">
     <div class="row">
 
     <div class="col">
          <small class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{credit.target}}
+          {{score.score_credit.target}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'payment_schedule' credit.id %}">Общий график платежей</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="{% url 'payment_schedule' score.score_credit.id %}">Общий график платежей</a>
+          <a class="dropdown-item" href="#">Погасить досрочно</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
@@ -46,11 +46,11 @@
     </div>
     <div class="w-100"></div>
     <div class="col"><p>
-    {{ credit.info.debt }}
-    {{ credit.currency.symbol }}
+    {{ score.score_credit.info.debt }}
+    {{ score.currency.symbol }}
     </div>
 
-        <div class="col"><em class="text-dark">к оплате 9064 {{ credit.currency.symbol }}</em></div>
+        <div class="col"><em class="text-dark">к оплате 9064 {{ score.currency.symbol }}</em></div>
 {% endfor %}
 </div></div>
 {% endif %}

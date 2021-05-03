@@ -16,7 +16,7 @@ class UserDetail(LoginRequiredMixin,DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['card_score'] = self.object.user_score.exclude(score_card=None)
-        context['all_credit'] = self.object.user_credit.all()
+        context['all_score_credit'] = self.object.user_score.exclude(score_credit=None)
         return context
 
     def get_object(self):

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Telephone, TypeNumber, Country, Area, City, UserLocation, \
     Score,Balance,Currency,BankName,Swift, Credit, InterestRate, Payments,Rate, \
-    Card, PaymentSystem, TypeCard, CreditTarget, CreditInfo, PaymentsInfo
+    Card, PaymentSystem, TypeCard, CreditTarget, CreditInfo, PaymentsInfo,TypeScore
 
 
 @admin.register(TypeNumber)
@@ -22,7 +22,7 @@ class CityAdmin(admin.ModelAdmin):
 @admin.register(Credit)
 class CreditAdmin(admin.ModelAdmin):
     '''Телефон'''
-    list_display = ("user_id","sum_credit")
+    list_display = ("sum_credit",)
 
 
 
@@ -43,6 +43,7 @@ admin.site.register(TypeCard)
 admin.site.register(CreditTarget)
 admin.site.register(CreditInfo)
 admin.site.register(PaymentsInfo)
+admin.site.register(TypeScore)
 
 
 
