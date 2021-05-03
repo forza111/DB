@@ -29,6 +29,6 @@ class PaymentsShedule(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['payments_info'] = self.object.credit_payments_info.all()
+        context['payments_info'] = self.object.credit_payments_info.all().order_by("id")
         return context
 
