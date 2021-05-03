@@ -2,7 +2,8 @@
 {% block content %}
 <h1>Hola, {{user.username}}</h1>
 
-
+{% if card_score %}
+<h5>Кошелек</h5>
 {% for score in card_score %}
 <div class="container">
     <div class="row">
@@ -19,7 +20,7 @@
 
         {% endfor %}
 </div></div>
-
+{% endif %}
 
 
 {% if all_score_credit %}
