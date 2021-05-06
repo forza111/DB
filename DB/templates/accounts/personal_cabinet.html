@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Hola, {{user.username}}</h1>
-
 {% if card_score %}
 <h5>Кошелек</h5>
 {% for score in card_score %}
@@ -15,12 +14,32 @@
     </div>
     <div class="w-100"></div>
     <div class="col"><p>{{ score.score_balance.balance }}
-    {{ score.currency.get }}</div>
+    {{ score.currency }}</div>
     <div class="col">{{score.score_card.type_card}}</div>
-
         {% endfor %}
 </div></div>
 {% endif %}
+
+{% if deposits %}
+<h5>Вклады и счета</h5>
+{% for dep in deposits %}
+<div class="container">
+    <div class="row">
+    <div class="col">
+        <small>{{ dep.type_score }}</small>
+    </div>
+    <div class="col">
+        ****{{dep.score_number | slice:":4"}}
+    </div>
+    <div class="w-100"></div>
+    <div class="col"><p>{{ dep.score_balance.balance }}
+    {{ dep.currency }}</div>
+    <div class="col"></div>
+{% endfor %}
+    </div></div>
+{% endif %}
+
+
 
 
 {% if all_score_credit %}
