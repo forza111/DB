@@ -75,10 +75,11 @@ class UserLocation(models.Model):
         on_delete=models.CASCADE,
         verbose_name="Пользователь",
         related_name="location")
-    country = models.OneToOneField(
+    country = models.ForeignKey(
         Country,
         on_delete=models.SET_NULL,
-        null=True)
+        null=True,
+        verbose_name="Страна")
     area = ChainedForeignKey(
         Area,
         chained_field="country",

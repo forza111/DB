@@ -82,7 +82,16 @@ WSGI_APPLICATION = 'DB.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = DATABASES
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.postgresql_psycopg2',
+'NAME': 'test_db',
+'USER': 'admin',
+'PASSWORD' : 'admin',
+'HOST' : 'localhost',
+'PORT' : ''
+}
+}
 
 
 AUTHENTICATION_BACKENDS = (

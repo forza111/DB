@@ -1,0 +1,2209 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2021-05-09T12:20:06.601Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "Никита",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2021-05-09T12:20:39.376Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Россия",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2021-05-09T12:20:44.765Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Беларусь",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2021-05-09T12:20:50.175Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Испания",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2021-05-09T12:20:57.465Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Казахстан",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2021-05-09T12:21:16.503Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Московская область",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2021-05-09T12:21:30.140Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "Ярославская область",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2021-05-09T12:21:45.665Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Владимирская область",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2021-05-09T12:22:06.579Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Могиилевская область",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2021-05-09T12:22:21.981Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "Витебкая область",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2021-05-09T12:22:54.301Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "6",
+    "object_repr": "Карагандинская область",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2021-05-09T12:24:17.108Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "7",
+    "object_repr": "Андалусия",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2021-05-09T12:24:29.808Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "1",
+    "object_repr": "Москва",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2021-05-09T12:24:38.295Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "2",
+    "object_repr": "Ярославль",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2021-05-09T12:24:44.453Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "Королев",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2021-05-09T12:24:56.034Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "4",
+    "object_repr": "Сергиев-Посад",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2021-05-09T12:25:06.114Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "5",
+    "object_repr": "Переславль-Залесский",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2021-05-09T12:25:14.669Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "6",
+    "object_repr": "Владимир",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2021-05-09T12:25:22.022Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "7",
+    "object_repr": "Могилев",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2021-05-09T12:25:32.260Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "8",
+    "object_repr": "Витебск",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2021-05-09T12:25:52.152Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "9",
+    "object_repr": "Караганда",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2021-05-09T12:26:08.012Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "10",
+    "object_repr": "Севилья",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2021-05-09T12:27:02.379Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "UserLocation object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2021-05-09T12:28:04.139Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "Николай",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2021-05-09T12:28:43.111Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "David",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2021-05-09T12:29:00.619Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "Катя",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2021-05-09T12:29:18.516Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "6",
+    "object_repr": "Егор",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2021-05-09T12:30:20.581Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "UserLocation object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2021-05-09T12:30:58.905Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "3",
+    "object_repr": "UserLocation object (3)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2021-05-09T12:31:37.712Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "4",
+    "object_repr": "UserLocation object (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2021-05-09T12:39:59.619Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "5",
+    "object_repr": "UserLocation object (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2021-05-09T12:40:31.923Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "5",
+    "object_repr": "UserLocation object (5)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Area\", \"City\", \"\\u0423\\u043b\\u0438\\u0446\\u0430\", \"\\u041d\\u043e\\u043c\\u0435\\u0440 \\u0434\\u043e\\u043c\\u0430\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2021-05-09T12:41:42.238Z",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "SABRRUMM",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2021-05-09T12:42:08.095Z",
+    "user": 1,
+    "content_type": 19,
+    "object_id": "1",
+    "object_repr": "Процентная ставка 8 %",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2021-05-09T12:42:11.672Z",
+    "user": 1,
+    "content_type": 19,
+    "object_id": "2",
+    "object_repr": "Процентная ставка 9 %",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2021-05-09T12:42:18.188Z",
+    "user": 1,
+    "content_type": 19,
+    "object_id": "3",
+    "object_repr": "Процентная ставка 10 %",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2021-05-09T12:42:21.571Z",
+    "user": 1,
+    "content_type": 19,
+    "object_id": "4",
+    "object_repr": "Процентная ставка 11 %",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2021-05-09T12:42:35.777Z",
+    "user": 1,
+    "content_type": 23,
+    "object_id": "1",
+    "object_repr": "MASTER CARD",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2021-05-09T12:42:40.129Z",
+    "user": 1,
+    "content_type": 23,
+    "object_id": "2",
+    "object_repr": "VISA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2021-05-09T12:42:43.348Z",
+    "user": 1,
+    "content_type": 23,
+    "object_id": "3",
+    "object_repr": "МИР",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2021-05-09T12:43:38.565Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "₽",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2021-05-09T12:43:53.689Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "2",
+    "object_repr": "$",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2021-05-09T12:44:08.035Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "3",
+    "object_repr": "€",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2021-05-09T12:44:35.604Z",
+    "user": 1,
+    "content_type": 22,
+    "object_id": "1",
+    "object_repr": "Курс $ по ЦБ на 2021-05-09 12:44:35.548061+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2021-05-09T12:44:50.562Z",
+    "user": 1,
+    "content_type": 22,
+    "object_id": "2",
+    "object_repr": "Курс € по ЦБ на 2021-05-09 12:44:50.561823+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2021-05-09T12:45:30.196Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Домашнй",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2021-05-09T12:45:35.193Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Мобильный",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2021-05-09T12:45:39.549Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Рабочий",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2021-05-09T12:46:06.262Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Telephone object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2021-05-09T12:46:15.856Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Telephone object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2021-05-09T12:46:29.751Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Telephone object (3)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2021-05-09T12:46:45.580Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Telephone object (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2021-05-09T12:47:00.579Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Telephone object (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2021-05-09T12:47:45.643Z",
+    "user": 1,
+    "content_type": 29,
+    "object_id": "1",
+    "object_repr": "Текущий",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2021-05-09T12:47:55.114Z",
+    "user": 1,
+    "content_type": 29,
+    "object_id": "2",
+    "object_repr": "Депозитный",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2021-05-09T12:47:59.385Z",
+    "user": 1,
+    "content_type": 29,
+    "object_id": "3",
+    "object_repr": "Ссудный",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2021-05-09T12:48:56.402Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "ПАО СБЕРБАНК",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2021-05-09T12:49:04.085Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "1",
+    "object_repr": "Счет Никита Валюта: ₽",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2021-05-09T12:49:32.776Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "2",
+    "object_repr": "Счет Никита Валюта: $",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2021-05-09T12:49:59.973Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "3",
+    "object_repr": "Счет Никита Валюта: €",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2021-05-09T12:50:10.810Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "1",
+    "object_repr": "Баланс пользователя Никита",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2021-05-09T12:50:17.151Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "2",
+    "object_repr": "Баланс пользователя Никита",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2021-05-09T12:50:22.625Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "3",
+    "object_repr": "Баланс пользователя Никита",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2021-05-09T12:51:50.329Z",
+    "user": 1,
+    "content_type": 26,
+    "object_id": "1",
+    "object_repr": "Покупка транспортного средства",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2021-05-09T12:51:55.845Z",
+    "user": 1,
+    "content_type": 26,
+    "object_id": "2",
+    "object_repr": "Покупка недвижимости",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2021-05-09T12:52:07.569Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "1",
+    "object_repr": "Кредит пользователя Счет Никита Валюта: ₽",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$xRAvp2je7lKH$s+CvoPLC3deR5NLVonBu5DlCDxmjDP1VGHPVsNOOcKM=",
+    "last_login": "2021-05-09T12:18:48.934Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@example.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-05-09T12:18:19.444Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$ufu9wYRxxIGF$VHGBhU2BGPR+qu3dstR8lqMyaIo7VT4CUktYHDCnUUk=",
+    "last_login": "2021-05-09T12:52:28.941Z",
+    "is_superuser": false,
+    "username": "Никита",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-09T12:20:06.370Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$zlwp3cQwXuJU$ynaAiiBzyx6wbCJU+uO85M/aztJ8SWJvmYLQiUfiWfE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Николай",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-09T12:28:03.936Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$4bOdA2QaQ9Ws$D/xGluL/HNIBiOD0Jr+z23A+1MVvgcIqDDDC2h5ELvk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "David",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-09T12:28:42.871Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$Ly239F0nveY5$bWF8p6EmQPZ8TQQ/gGZ5KdeLz3usK6gNDblKCl2UrHA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Катя",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-09T12:29:00.412Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$QvSP9R04l4ns$OBrn/NDiOemDGoWtnlVbrAyCmaRyZUlWz0CnaQctGvk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Егор",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-09T12:29:18.304Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "43aw9zxzivg6e1var42uig64tacbbc0w",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAOQwFduu8ZCMOAVA0kpV0Z765NutDtf-_9l_BhW4vfelr8zOIilDj9bhTiI9Ud8D3UW5Ox1XWZSe6KPGiXU-P0vB7u30EJvXxrYwl4TBrPEThYo5R1lDVSJIdOg81gIZtEUeOoCTKaAbMCNyQmp1G8P9h8N28:1lfiv6:wraPAMi0JKsMAU3UsNRR8a8L-nm9ABuumLWRmT5oxU4",
+    "expire_date": "2021-05-23T12:52:28.953Z"
+  }
+},
+{
+  "model": "sites.site",
+  "pk": 1,
+  "fields": {
+    "domain": "example.com",
+    "name": "example.com"
+  }
+},
+{
+  "model": "accounts.typenumber",
+  "pk": 1,
+  "fields": {
+    "type_number": "Домашнй"
+  }
+},
+{
+  "model": "accounts.typenumber",
+  "pk": 2,
+  "fields": {
+    "type_number": "Мобильный"
+  }
+},
+{
+  "model": "accounts.typenumber",
+  "pk": 3,
+  "fields": {
+    "type_number": "Рабочий"
+  }
+},
+{
+  "model": "accounts.telephone",
+  "pk": 1,
+  "fields": {
+    "user_id": 2,
+    "telephone_number": "89250414067",
+    "type_number": [
+      2
+    ]
+  }
+},
+{
+  "model": "accounts.telephone",
+  "pk": 2,
+  "fields": {
+    "user_id": 4,
+    "telephone_number": "843534534534",
+    "type_number": [
+      3
+    ]
+  }
+},
+{
+  "model": "accounts.telephone",
+  "pk": 3,
+  "fields": {
+    "user_id": 6,
+    "telephone_number": "896527839234",
+    "type_number": [
+      3
+    ]
+  }
+},
+{
+  "model": "accounts.telephone",
+  "pk": 4,
+  "fields": {
+    "user_id": 5,
+    "telephone_number": "894546787668",
+    "type_number": [
+      2
+    ]
+  }
+},
+{
+  "model": "accounts.telephone",
+  "pk": 5,
+  "fields": {
+    "user_id": 3,
+    "telephone_number": "896437698708",
+    "type_number": [
+      2
+    ]
+  }
+},
+{
+  "model": "accounts.country",
+  "pk": 1,
+  "fields": {
+    "name_country": "Россия"
+  }
+},
+{
+  "model": "accounts.country",
+  "pk": 2,
+  "fields": {
+    "name_country": "Беларусь"
+  }
+},
+{
+  "model": "accounts.country",
+  "pk": 3,
+  "fields": {
+    "name_country": "Испания"
+  }
+},
+{
+  "model": "accounts.country",
+  "pk": 4,
+  "fields": {
+    "name_country": "Казахстан"
+  }
+},
+{
+  "model": "accounts.area",
+  "pk": 1,
+  "fields": {
+    "name_area": "Московская область",
+    "country_id": 1
+  }
+},
+{
+  "model": "accounts.area",
+  "pk": 2,
+  "fields": {
+    "name_area": "Ярославская область",
+    "country_id": 1
+  }
+},
+{
+  "model": "accounts.area",
+  "pk": 3,
+  "fields": {
+    "name_area": "Владимирская область",
+    "country_id": 1
+  }
+},
+{
+  "model": "accounts.area",
+  "pk": 4,
+  "fields": {
+    "name_area": "Могиилевская область",
+    "country_id": 2
+  }
+},
+{
+  "model": "accounts.area",
+  "pk": 5,
+  "fields": {
+    "name_area": "Витебкая область",
+    "country_id": 2
+  }
+},
+{
+  "model": "accounts.area",
+  "pk": 6,
+  "fields": {
+    "name_area": "Карагандинская область",
+    "country_id": 4
+  }
+},
+{
+  "model": "accounts.area",
+  "pk": 7,
+  "fields": {
+    "name_area": "Андалусия",
+    "country_id": 3
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 1,
+  "fields": {
+    "name_city": "Москва",
+    "area_id": 1
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 2,
+  "fields": {
+    "name_city": "Ярославль",
+    "area_id": 2
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 3,
+  "fields": {
+    "name_city": "Королев",
+    "area_id": 1
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 4,
+  "fields": {
+    "name_city": "Сергиев-Посад",
+    "area_id": 1
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 5,
+  "fields": {
+    "name_city": "Переславль-Залесский",
+    "area_id": 2
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 6,
+  "fields": {
+    "name_city": "Владимир",
+    "area_id": 3
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 7,
+  "fields": {
+    "name_city": "Могилев",
+    "area_id": 4
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 8,
+  "fields": {
+    "name_city": "Витебск",
+    "area_id": 5
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 9,
+  "fields": {
+    "name_city": "Караганда",
+    "area_id": 6
+  }
+},
+{
+  "model": "accounts.city",
+  "pk": 10,
+  "fields": {
+    "name_city": "Севилья",
+    "area_id": 7
+  }
+},
+{
+  "model": "accounts.userlocation",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "country": 1,
+    "area": 1,
+    "city": 3,
+    "street": "Пионерская",
+    "house_number": "16",
+    "building": null,
+    "edifice": null,
+    "entrance": null,
+    "floor": null,
+    "room": null
+  }
+},
+{
+  "model": "accounts.userlocation",
+  "pk": 2,
+  "fields": {
+    "user": 4,
+    "country": 3,
+    "area": 7,
+    "city": 10,
+    "street": "Avenida Malaga",
+    "house_number": "17",
+    "building": null,
+    "edifice": null,
+    "entrance": null,
+    "floor": null,
+    "room": null
+  }
+},
+{
+  "model": "accounts.userlocation",
+  "pk": 3,
+  "fields": {
+    "user": 6,
+    "country": 2,
+    "area": 5,
+    "city": 8,
+    "street": "Ореховая",
+    "house_number": "11",
+    "building": null,
+    "edifice": null,
+    "entrance": null,
+    "floor": null,
+    "room": null
+  }
+},
+{
+  "model": "accounts.userlocation",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "country": 4,
+    "area": 6,
+    "city": 9,
+    "street": "Абая",
+    "house_number": "19",
+    "building": null,
+    "edifice": null,
+    "entrance": null,
+    "floor": null,
+    "room": null
+  }
+},
+{
+  "model": "accounts.userlocation",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "country": 1,
+    "area": 2,
+    "city": 5,
+    "street": "Советская",
+    "house_number": "25",
+    "building": null,
+    "edifice": null,
+    "entrance": null,
+    "floor": null,
+    "room": null
+  }
+},
+{
+  "model": "accounts.currency",
+  "pk": 1,
+  "fields": {
+    "name_currency": "Рубль",
+    "symbol": "₽"
+  }
+},
+{
+  "model": "accounts.currency",
+  "pk": 2,
+  "fields": {
+    "name_currency": "Доллар",
+    "symbol": "$"
+  }
+},
+{
+  "model": "accounts.currency",
+  "pk": 3,
+  "fields": {
+    "name_currency": "Евро",
+    "symbol": "€"
+  }
+},
+{
+  "model": "accounts.rate",
+  "pk": 1,
+  "fields": {
+    "currency": 2,
+    "date": "2021-05-09T12:44:35.548Z",
+    "rate": "73.78"
+  }
+},
+{
+  "model": "accounts.rate",
+  "pk": 2,
+  "fields": {
+    "currency": 3,
+    "date": "2021-05-09T12:44:50.561Z",
+    "rate": "89.78"
+  }
+},
+{
+  "model": "accounts.bankname",
+  "pk": 1,
+  "fields": {
+    "name": "ПАО СБЕРБАНК"
+  }
+},
+{
+  "model": "accounts.swift",
+  "pk": 1,
+  "fields": {
+    "name": "SABRRUMM"
+  }
+},
+{
+  "model": "accounts.typescore",
+  "pk": 1,
+  "fields": {
+    "name": "Текущий"
+  }
+},
+{
+  "model": "accounts.typescore",
+  "pk": 2,
+  "fields": {
+    "name": "Депозитный"
+  }
+},
+{
+  "model": "accounts.typescore",
+  "pk": 3,
+  "fields": {
+    "name": "Ссудный"
+  }
+},
+{
+  "model": "accounts.score",
+  "pk": 1,
+  "fields": {
+    "user_id": 2,
+    "currency": 1,
+    "score_number": "78689656747669870889",
+    "bank_name": 1,
+    "bik": "675687978",
+    "correspondent_account": "34534634455456456435",
+    "inn": "6546457687",
+    "kpp": "345346456",
+    "swift": 1,
+    "type_score": 3
+  }
+},
+{
+  "model": "accounts.score",
+  "pk": 2,
+  "fields": {
+    "user_id": 2,
+    "currency": 2,
+    "score_number": "78987674657787865465",
+    "bank_name": 1,
+    "bik": "376589289",
+    "correspondent_account": "23565642624654564365",
+    "inn": "6524535235",
+    "kpp": "356645643",
+    "swift": 1,
+    "type_score": 2
+  }
+},
+{
+  "model": "accounts.score",
+  "pk": 3,
+  "fields": {
+    "user_id": 2,
+    "currency": 3,
+    "score_number": "78657898908765467879",
+    "bank_name": 1,
+    "bik": "324245455",
+    "correspondent_account": "46542654562465324512",
+    "inn": "2345124214",
+    "kpp": "245125435",
+    "swift": 1,
+    "type_score": 1
+  }
+},
+{
+  "model": "accounts.balance",
+  "pk": 1,
+  "fields": {
+    "score_id": 1,
+    "balance": 158645
+  }
+},
+{
+  "model": "accounts.balance",
+  "pk": 2,
+  "fields": {
+    "score_id": 2,
+    "balance": 234235
+  }
+},
+{
+  "model": "accounts.balance",
+  "pk": 3,
+  "fields": {
+    "score_id": 3,
+    "balance": 234234
+  }
+},
+{
+  "model": "accounts.interestrate",
+  "pk": 1,
+  "fields": {
+    "rate": "8"
+  }
+},
+{
+  "model": "accounts.interestrate",
+  "pk": 2,
+  "fields": {
+    "rate": "9"
+  }
+},
+{
+  "model": "accounts.interestrate",
+  "pk": 3,
+  "fields": {
+    "rate": "10"
+  }
+},
+{
+  "model": "accounts.interestrate",
+  "pk": 4,
+  "fields": {
+    "rate": "11"
+  }
+},
+{
+  "model": "accounts.credittarget",
+  "pk": 1,
+  "fields": {
+    "name": "Покупка транспортного средства"
+  }
+},
+{
+  "model": "accounts.credittarget",
+  "pk": 2,
+  "fields": {
+    "name": "Покупка недвижимости"
+  }
+},
+{
+  "model": "accounts.credit",
+  "pk": 1,
+  "fields": {
+    "score": 1,
+    "target": 2,
+    "sum_credit": "500000.00",
+    "beginning_date": "2021-05-09",
+    "deadline": 5,
+    "interest_rate": 1
+  }
+},
+{
+  "model": "accounts.creditinfo",
+  "pk": 1,
+  "fields": {
+    "credit": 1,
+    "completion_date": "2026-05-09",
+    "interest_rate_mounth": "0.006666666666666666",
+    "total_rate": "1.489845708301605010",
+    "deadline_mounth": 60,
+    "mounthly_payments": "10138.20",
+    "total_debt": "608292.00",
+    "interest_charges": "108292.00",
+    "paid": "0.00",
+    "debt": "608292.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 61,
+  "fields": {
+    "credit": 1,
+    "number": 1,
+    "date": "2021-06-09",
+    "mounthly_payments": "10138.20",
+    "debt": "598153.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 62,
+  "fields": {
+    "credit": 1,
+    "number": 2,
+    "date": "2021-07-09",
+    "mounthly_payments": "10138.20",
+    "debt": "588015.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 63,
+  "fields": {
+    "credit": 1,
+    "number": 3,
+    "date": "2021-08-09",
+    "mounthly_payments": "10138.20",
+    "debt": "577877.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 64,
+  "fields": {
+    "credit": 1,
+    "number": 4,
+    "date": "2021-09-09",
+    "mounthly_payments": "10138.20",
+    "debt": "567739.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 65,
+  "fields": {
+    "credit": 1,
+    "number": 5,
+    "date": "2021-10-09",
+    "mounthly_payments": "10138.20",
+    "debt": "557601.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 66,
+  "fields": {
+    "credit": 1,
+    "number": 6,
+    "date": "2021-11-09",
+    "mounthly_payments": "10138.20",
+    "debt": "547462.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 67,
+  "fields": {
+    "credit": 1,
+    "number": 7,
+    "date": "2021-12-09",
+    "mounthly_payments": "10138.20",
+    "debt": "537324.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 68,
+  "fields": {
+    "credit": 1,
+    "number": 8,
+    "date": "2022-01-09",
+    "mounthly_payments": "10138.20",
+    "debt": "527186.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 69,
+  "fields": {
+    "credit": 1,
+    "number": 9,
+    "date": "2022-02-09",
+    "mounthly_payments": "10138.20",
+    "debt": "517048.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 70,
+  "fields": {
+    "credit": 1,
+    "number": 10,
+    "date": "2022-03-09",
+    "mounthly_payments": "10138.20",
+    "debt": "506910.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 71,
+  "fields": {
+    "credit": 1,
+    "number": 11,
+    "date": "2022-04-09",
+    "mounthly_payments": "10138.20",
+    "debt": "496771.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 72,
+  "fields": {
+    "credit": 1,
+    "number": 12,
+    "date": "2022-05-09",
+    "mounthly_payments": "10138.20",
+    "debt": "486633.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 73,
+  "fields": {
+    "credit": 1,
+    "number": 13,
+    "date": "2022-06-09",
+    "mounthly_payments": "10138.20",
+    "debt": "476495.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 74,
+  "fields": {
+    "credit": 1,
+    "number": 14,
+    "date": "2022-07-09",
+    "mounthly_payments": "10138.20",
+    "debt": "466357.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 75,
+  "fields": {
+    "credit": 1,
+    "number": 15,
+    "date": "2022-08-09",
+    "mounthly_payments": "10138.20",
+    "debt": "456219.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 76,
+  "fields": {
+    "credit": 1,
+    "number": 16,
+    "date": "2022-09-09",
+    "mounthly_payments": "10138.20",
+    "debt": "446080.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 77,
+  "fields": {
+    "credit": 1,
+    "number": 17,
+    "date": "2022-10-09",
+    "mounthly_payments": "10138.20",
+    "debt": "435942.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 78,
+  "fields": {
+    "credit": 1,
+    "number": 18,
+    "date": "2022-11-09",
+    "mounthly_payments": "10138.20",
+    "debt": "425804.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 79,
+  "fields": {
+    "credit": 1,
+    "number": 19,
+    "date": "2022-12-09",
+    "mounthly_payments": "10138.20",
+    "debt": "415666.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 80,
+  "fields": {
+    "credit": 1,
+    "number": 20,
+    "date": "2023-01-09",
+    "mounthly_payments": "10138.20",
+    "debt": "405528.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 81,
+  "fields": {
+    "credit": 1,
+    "number": 21,
+    "date": "2023-02-09",
+    "mounthly_payments": "10138.20",
+    "debt": "395389.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 82,
+  "fields": {
+    "credit": 1,
+    "number": 22,
+    "date": "2023-03-09",
+    "mounthly_payments": "10138.20",
+    "debt": "385251.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 83,
+  "fields": {
+    "credit": 1,
+    "number": 23,
+    "date": "2023-04-09",
+    "mounthly_payments": "10138.20",
+    "debt": "375113.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 84,
+  "fields": {
+    "credit": 1,
+    "number": 24,
+    "date": "2023-05-09",
+    "mounthly_payments": "10138.20",
+    "debt": "364975.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 85,
+  "fields": {
+    "credit": 1,
+    "number": 25,
+    "date": "2023-06-09",
+    "mounthly_payments": "10138.20",
+    "debt": "354837.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 86,
+  "fields": {
+    "credit": 1,
+    "number": 26,
+    "date": "2023-07-09",
+    "mounthly_payments": "10138.20",
+    "debt": "344698.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 87,
+  "fields": {
+    "credit": 1,
+    "number": 27,
+    "date": "2023-08-09",
+    "mounthly_payments": "10138.20",
+    "debt": "334560.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 88,
+  "fields": {
+    "credit": 1,
+    "number": 28,
+    "date": "2023-09-09",
+    "mounthly_payments": "10138.20",
+    "debt": "324422.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 89,
+  "fields": {
+    "credit": 1,
+    "number": 29,
+    "date": "2023-10-09",
+    "mounthly_payments": "10138.20",
+    "debt": "314284.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 90,
+  "fields": {
+    "credit": 1,
+    "number": 30,
+    "date": "2023-11-09",
+    "mounthly_payments": "10138.20",
+    "debt": "304146.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 91,
+  "fields": {
+    "credit": 1,
+    "number": 31,
+    "date": "2023-12-09",
+    "mounthly_payments": "10138.20",
+    "debt": "294007.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 92,
+  "fields": {
+    "credit": 1,
+    "number": 32,
+    "date": "2024-01-09",
+    "mounthly_payments": "10138.20",
+    "debt": "283869.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 93,
+  "fields": {
+    "credit": 1,
+    "number": 33,
+    "date": "2024-02-09",
+    "mounthly_payments": "10138.20",
+    "debt": "273731.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 94,
+  "fields": {
+    "credit": 1,
+    "number": 34,
+    "date": "2024-03-09",
+    "mounthly_payments": "10138.20",
+    "debt": "263593.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 95,
+  "fields": {
+    "credit": 1,
+    "number": 35,
+    "date": "2024-04-09",
+    "mounthly_payments": "10138.20",
+    "debt": "253455.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 96,
+  "fields": {
+    "credit": 1,
+    "number": 36,
+    "date": "2024-05-09",
+    "mounthly_payments": "10138.20",
+    "debt": "243316.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 97,
+  "fields": {
+    "credit": 1,
+    "number": 37,
+    "date": "2024-06-09",
+    "mounthly_payments": "10138.20",
+    "debt": "233178.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 98,
+  "fields": {
+    "credit": 1,
+    "number": 38,
+    "date": "2024-07-09",
+    "mounthly_payments": "10138.20",
+    "debt": "223040.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 99,
+  "fields": {
+    "credit": 1,
+    "number": 39,
+    "date": "2024-08-09",
+    "mounthly_payments": "10138.20",
+    "debt": "212902.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 100,
+  "fields": {
+    "credit": 1,
+    "number": 40,
+    "date": "2024-09-09",
+    "mounthly_payments": "10138.20",
+    "debt": "202764.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 101,
+  "fields": {
+    "credit": 1,
+    "number": 41,
+    "date": "2024-10-09",
+    "mounthly_payments": "10138.20",
+    "debt": "192625.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 102,
+  "fields": {
+    "credit": 1,
+    "number": 42,
+    "date": "2024-11-09",
+    "mounthly_payments": "10138.20",
+    "debt": "182487.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 103,
+  "fields": {
+    "credit": 1,
+    "number": 43,
+    "date": "2024-12-09",
+    "mounthly_payments": "10138.20",
+    "debt": "172349.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 104,
+  "fields": {
+    "credit": 1,
+    "number": 44,
+    "date": "2025-01-09",
+    "mounthly_payments": "10138.20",
+    "debt": "162211.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 105,
+  "fields": {
+    "credit": 1,
+    "number": 45,
+    "date": "2025-02-09",
+    "mounthly_payments": "10138.20",
+    "debt": "152073.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 106,
+  "fields": {
+    "credit": 1,
+    "number": 46,
+    "date": "2025-03-09",
+    "mounthly_payments": "10138.20",
+    "debt": "141934.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 107,
+  "fields": {
+    "credit": 1,
+    "number": 47,
+    "date": "2025-04-09",
+    "mounthly_payments": "10138.20",
+    "debt": "131796.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 108,
+  "fields": {
+    "credit": 1,
+    "number": 48,
+    "date": "2025-05-09",
+    "mounthly_payments": "10138.20",
+    "debt": "121658.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 109,
+  "fields": {
+    "credit": 1,
+    "number": 49,
+    "date": "2025-06-09",
+    "mounthly_payments": "10138.20",
+    "debt": "111520.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 110,
+  "fields": {
+    "credit": 1,
+    "number": 50,
+    "date": "2025-07-09",
+    "mounthly_payments": "10138.20",
+    "debt": "101382.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 111,
+  "fields": {
+    "credit": 1,
+    "number": 51,
+    "date": "2025-08-09",
+    "mounthly_payments": "10138.20",
+    "debt": "91243.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 112,
+  "fields": {
+    "credit": 1,
+    "number": 52,
+    "date": "2025-09-09",
+    "mounthly_payments": "10138.20",
+    "debt": "81105.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 113,
+  "fields": {
+    "credit": 1,
+    "number": 53,
+    "date": "2025-10-09",
+    "mounthly_payments": "10138.20",
+    "debt": "70967.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 114,
+  "fields": {
+    "credit": 1,
+    "number": 54,
+    "date": "2025-11-09",
+    "mounthly_payments": "10138.20",
+    "debt": "60829.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 115,
+  "fields": {
+    "credit": 1,
+    "number": 55,
+    "date": "2025-12-09",
+    "mounthly_payments": "10138.20",
+    "debt": "50691.00"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 116,
+  "fields": {
+    "credit": 1,
+    "number": 56,
+    "date": "2026-01-09",
+    "mounthly_payments": "10138.20",
+    "debt": "40552.80"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 117,
+  "fields": {
+    "credit": 1,
+    "number": 57,
+    "date": "2026-02-09",
+    "mounthly_payments": "10138.20",
+    "debt": "30414.60"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 118,
+  "fields": {
+    "credit": 1,
+    "number": 58,
+    "date": "2026-03-09",
+    "mounthly_payments": "10138.20",
+    "debt": "20276.40"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 119,
+  "fields": {
+    "credit": 1,
+    "number": 59,
+    "date": "2026-04-09",
+    "mounthly_payments": "10138.20",
+    "debt": "10138.20"
+  }
+},
+{
+  "model": "accounts.paymentsinfo",
+  "pk": 120,
+  "fields": {
+    "credit": 1,
+    "number": 60,
+    "date": "2026-05-09",
+    "mounthly_payments": "10138.20",
+    "debt": "0.00"
+  }
+},
+{
+  "model": "accounts.paymentsystem",
+  "pk": 1,
+  "fields": {
+    "name": "MASTER CARD"
+  }
+},
+{
+  "model": "accounts.paymentsystem",
+  "pk": 2,
+  "fields": {
+    "name": "VISA"
+  }
+},
+{
+  "model": "accounts.paymentsystem",
+  "pk": 3,
+  "fields": {
+    "name": "МИР"
+  }
+}
+]
